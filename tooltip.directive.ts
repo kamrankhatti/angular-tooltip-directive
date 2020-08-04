@@ -28,11 +28,11 @@ export class TooltipDirective {
   show() {
     this.create();
     this.setPosition();
-    this.renderer.addClass(this.tooltip, 'nod-tooltip-show');
+    this.renderer.addClass(this.tooltip, 'tooltip-show');
   }
 
   hide() {
-    this.renderer.removeClass(this.tooltip, 'nod-tooltip-show');
+    this.renderer.removeClass(this.tooltip, 'tooltip-show');
     window.setTimeout(() => {
       this.renderer.removeChild(document.body, this.tooltip);
       this.tooltip = null;
@@ -50,8 +50,8 @@ export class TooltipDirective {
     this.renderer.appendChild(document.body, this.tooltip);
     // this.renderer.appendChild(this.el.nativeElement, this.tooltip);
 
-    this.renderer.addClass(this.tooltip, 'nod-tooltip');
-    this.renderer.addClass(this.tooltip, `nod-tooltip-${this.placement}`);
+    this.renderer.addClass(this.tooltip, 'tooltip');
+    this.renderer.addClass(this.tooltip, `tooltip-${this.placement}`);
 
     // delay settings
     this.renderer.setStyle(this.tooltip, '-webkit-transition', `opacity ${this.delay}ms`);
